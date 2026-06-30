@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import CursorEffect from "@/components/CursorEffect";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Adel Sinaga — IT Student & Developer",
   description:
     "Portfolio of Adel Septiana Sinaga — Information Technology Student passionate about Software Development, Web Development, and Building Digital Solutions.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

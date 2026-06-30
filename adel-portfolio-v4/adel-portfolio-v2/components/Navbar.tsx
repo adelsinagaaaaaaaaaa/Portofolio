@@ -21,6 +21,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,7 +32,7 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transform-gpu transition-all duration-300 ${
           scrolled
             ? "bg-[#050508]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20"
             : "bg-transparent"
@@ -40,7 +41,7 @@ export default function Navbar() {
         {/* FIX: full-width centering with max-w container */}
         <div className="w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-between h-16 w-full overflow-hidden">
 
               {/* Logo — left anchor */}
               <Link href="/" className="flex items-center gap-2 flex-shrink-0">
@@ -51,7 +52,7 @@ export default function Navbar() {
               </Link>
 
               {/* Nav links — truly centered */}
-              <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+              <div className="hidden md:flex items-center gap-1 md:absolute md:left-1/2 md:-translate-x-1/2">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
@@ -91,9 +92,10 @@ export default function Navbar() {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden p-2 rounded-lg glass border border-white/10"
+                className="md:hidden p-2 rounded-lg bg-white/10 border border-white/20 text-white"
+                aria-label="Toggle menu"
               >
-                {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
             </div>
           </div>
@@ -108,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-[#050508]/95 backdrop-blur-md border-b border-white/10 md:hidden"
+            className="mobile-menu-panel fixed top-16 left-0 right-0 z-40 bg-[#050508]/95 backdrop-blur-md border-b border-white/10 md:hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => {

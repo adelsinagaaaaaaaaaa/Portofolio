@@ -311,4 +311,10 @@ label {
 [data-theme="dark"] .open-to-work-text {
   color: #22d3ee !important;
   -webkit-text-fill-color: #22d3ee !important;
+} 
+
+/* Mobile menu panel di light mode */
+[data-theme="light"] .mobile-menu-panel {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }

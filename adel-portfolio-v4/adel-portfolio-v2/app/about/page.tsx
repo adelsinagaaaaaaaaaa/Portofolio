@@ -104,13 +104,13 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050508]">
+    <div className="relative min-h-screen bg-[#050508]">
       <Navbar />
 
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/8 rounded-full blur-[100px] pointer-events-none" />
 
-      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"

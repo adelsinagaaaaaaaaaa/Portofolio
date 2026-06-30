@@ -42,7 +42,7 @@ export default function ThemeToggle() {
       onClick={toggle}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full glass border border-white/10 flex items-center justify-center shadow-lg hover:border-white/30 transition-all"
+      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-white/15 border border-white/30 flex items-center justify-center shadow-lg shadow-black/40 hover:border-white/50 transition-all"
       title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
       <motion.div
