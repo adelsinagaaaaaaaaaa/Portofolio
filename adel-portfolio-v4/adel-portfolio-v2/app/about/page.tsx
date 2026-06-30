@@ -104,7 +104,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#050508]">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#050508]">
       <Navbar />
 
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
@@ -140,8 +140,8 @@ export default function AboutPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative flex justify-center"
             >
-              <div className="relative w-72 md:w-80">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/30 to-purple-600/30 blur-[80px] scale-110" />
+              <div className="relative w-72 md:w-80 overflow-hidden rounded-3xl">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/30 to-purple-600/30 blur-[50px]" />
 
                 <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden border border-white/10">
                   <Image
