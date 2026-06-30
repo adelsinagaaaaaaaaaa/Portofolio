@@ -32,7 +32,9 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "glass border-b border-white/10 shadow-lg shadow-black/20" : "bg-transparent"
+          scrolled
+            ? "bg-[#050508]/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20"
+            : "bg-transparent"
         }`}
       >
         {/* FIX: full-width centering with max-w container */}
@@ -106,7 +108,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 glass border-b border-white/10 md:hidden"
+            className="fixed top-16 left-0 right-0 z-40 bg-[#050508]/95 backdrop-blur-md border-b border-white/10 md:hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => {
